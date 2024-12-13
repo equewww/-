@@ -4,15 +4,18 @@ import random
 
 # Функция для упорядочения строк матрицы:
 def sort_m(m):
-    for i in m:
-        i.sort()
+    for n in range(1000):
+        for i in range(len(m)):
+            for j in range(len(m[i])-1):
+                if m[i][j] > m[i][j+1]:
+                    m[i][j], m[i][j + 1] = m[i][j+1], m[i][j]
     return m
 
-k = input('Введите количество строк: ')
+j = input('Введите количество строк: ')
 i = input('Введите количество столбцов: ')
 
 # Рандомно создаем матрицу:
-m  = [[random.randint(-100, 100) for _ in range(int(i))] for _ in range(int(k))]
+m  = [[random.randint(-100, 100) for _ in range(int(i))] for _ in range(int(j))]
 print('Матрица:')
 for i in m:
     print(i)

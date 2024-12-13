@@ -7,9 +7,15 @@ import random
 def sort_m(m):
     for i in range(len(m)):
         if i % 2 == 0: # Четные строки в порядке возрастания
-            m[i].sort()
+            for n in range(1000):
+                for j in range(len(m[i]) - 1):
+                    if m[i][j] > m[i][j + 1]:
+                        m[i][j], m[i][j + 1] = m[i][j + 1], m[i][j]
         else: # Нечетные строки в порядке убывания
-            m[i].sort(reverse=True)
+            for n in range(1000):
+                for j in range(len(m[i]) - 1):
+                    if m[i][j] < m[i][j + 1]:
+                        m[i][j], m[i][j + 1] = m[i][j + 1], m[i][j]
     return m
 
 # Рандомно создаем матрицу по заданному размеру

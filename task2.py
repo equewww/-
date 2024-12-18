@@ -9,6 +9,7 @@ class Jump:
         self.second = round(random.uniform(0, 4), 2)
         self.third = round(random.uniform(0, 4), 2)
 
+    # Функция для определения лучшего прыжка
     def best(self):
         if self.first <= self.second and self.third <= self.second:
             return self.second
@@ -17,11 +18,12 @@ class Jump:
         elif self.first <= self.third and self.third >= self.second:
             return self.third
 
-surnames = ['Исаев Д. Е.', 'Спиридонова В. Д.', 'Гончарова К. И.', 'Макарова А. А.',
-            'Васильев М. А.', 'Сафонов М. Т.', 'Мещеряков И. М.', 'Майоров Т. А.']
+surnames = ['Исаев Д. Е.      ', 'Спиридонова В. Д.', 'Гончарова К. И.  ', 'Макарова А. А.   ',
+            'Васильев М. А.   ', 'Сафонов М. Т.    ', 'Мещеряков И. М.  ', 'Майоров Т. А.    ']
 
+# Формируем список спортсменов
 athletes = [Jump(surname) for surname in surnames]
 
 print('Протокол соревнований:')
 for athlete in athletes:
-    print(f"{athlete.surname}: Лучший прыжок: {athlete.best():.2f} (Первый: {athlete.first}, Второй: {athlete.second}, Третий: {athlete.third})")
+    print(athlete.surname, ': Лучший прыжок: ', athlete.best(), ': ( Первый: ', athlete.first, 'Второй: ', athlete.second, 'Третий: ', athlete.third, ')')
